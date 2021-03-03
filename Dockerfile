@@ -1,6 +1,10 @@
 FROM python:3-alpine
 
-ARG KUBE_VERSION=1.13.7
+
+RUN mkdir -p /srv/.aws \
+ && chown -R nobody:nobody /srv
+
+ARG KUBE_VERSION=1.18.16
 ENV HOME=/srv
 WORKDIR /srv
 
